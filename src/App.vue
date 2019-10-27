@@ -1,28 +1,58 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <Menu @change-exercise="changeExerciseType"/>
+
+    <Exercise
+      :allowed-keys="allowedKeys"
+      :type-sound="typeSound"
+      :error-sound="errorSound"
+      :backspace-sound="backspaceSound"
+      :selected-exercise="selectedExercise"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import "@/assets/styles.scss";
+
+import { allowedKeys } from "./core/allowed-keys";
+import { exercises } from "./core/exercises";
+import { sounds } from "./core/sounds";
+
+import Exercise from "./components/Exercise";
+import Menu from "./components/Menu";
+
 
 export default {
-  name: 'app',
+  data() {
+    return {
+      allowedKeys,
+      exercises,
+      selectedExercise: [],
+      ...sounds
+    };
+  },
+  name: "app",
   components: {
-    HelloWorld
+    Exercise,
+    Menu
+  },
+  methods: {
+    changeExerciseType(type) {
+      this.selectedExercise = this.exercises[type];
+    }
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
 </style>
