@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header/>    
 
     <Menu @change-exercise="changeExerciseType"/>
 
@@ -22,6 +23,7 @@ import { sounds } from "./core/sounds";
 
 import Exercise from "./components/Exercise";
 import Menu from "./components/Menu";
+import Header from "./components/layout/Header";
 
 
 export default {

@@ -3,7 +3,9 @@
     <div class="header__logo">
       <img alt="Vue logo" src="./assets/logo.png" class="image" />
     </div>
-    <div class="header__links"></div>
+    <ul class="menu">
+        <li class="menu__item"><a href="" class="link"></a></li>
+    </ul>
   </header>
 </template>
 

@@ -2,8 +2,8 @@ export const exercises = {
     "Text": [
       "This is the first line so yes ",
       "This is the 2nd line of code ",
-      "The 3rd line, bitch, so what? ",
-      "Fucking 4th string for testing"
+      "The 3rd line, do you have some more? ",
+      "The latest line in this exercise"
     ],
     "Numbers": [
       "47382 7473 0183 01234 8341",
