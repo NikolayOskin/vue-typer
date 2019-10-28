@@ -1,0 +1,24 @@
+.app {
+  font-family: $avenir;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $dark;
+}
+.link {
+  text-decoration: none;
+  color: $dark;
+}
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+}
+.subheader {
+  font-family: $barlow;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.image {
+  max-width: 100%;
+  max-height: 100%;
+}
