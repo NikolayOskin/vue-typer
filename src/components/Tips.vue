@@ -1,11 +1,14 @@
 <template>
-  <p v-if="showTips" class="tips heartbeat">Start typing...</p>
+  <p class="tips heartbeat" :class="{'hidden': !showTips || isExerciseStarted}">Start typing...</p>
 </template>
 
 
 <script>
 export default {
   name: "Tips",
+  props: {
+    isExerciseStarted: Boolean
+  },
   data() {
     return {
       showTips: false
@@ -14,14 +17,22 @@ export default {
   mounted() {
     setTimeout(() => {
       this.showTips = true;
-    }, 2000);
+    }, 500);
   }
 };
 </script>
 
 
 <style scoped>
+.hidden {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.4s;
+}
 .tips {
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  font-size: 26px;
   text-align: center;
   margin-top: 100px;
   font-weight: 700;
